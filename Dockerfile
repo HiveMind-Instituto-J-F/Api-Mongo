@@ -15,7 +15,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build do projeto sem testar, sem resource filtering
-RUN mvn clean install
+RUN mvn clean package -DskipTests
 
 # =============================
 # Etapa 2: Runtime com JDK 21 slim
