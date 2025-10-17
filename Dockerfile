@@ -3,6 +3,10 @@
 # =============================
 FROM maven:3.9.4-eclipse-temurin-21 AS builder
 
+# Instala JDK
+RUN apt-get update
+RUN apt-get install openjdk-21-jdk -y
+
 # Diretório de trabalho
 WORKDIR /app
 
@@ -11,13 +15,13 @@ COPY pom.xml .
 COPY src ./src
 
 # Build do projeto sem testar, sem resource filtering
-RUN mvn clean package -DskipTests
+RUN mvn clean install
 
 # =============================
 # Etapa 2: Runtime com JDK 21 slim
 # =============================
-#FROM openjdk:21-jdk-slim
-FROM eclipse-temurin:17-jre-alpine
+FROM openjdk:21-jdk-slim
+#FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
