@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 
 # Porta que a API vai escutar
-EXPOSE 8080
+EXPOSE 27100
 
 # Ativa o profile QA do Spring
 ENV SPRING_PROFILES_ACTIVE=qa
