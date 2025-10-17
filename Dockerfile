@@ -16,7 +16,8 @@ RUN mvn clean package -DskipTests
 # =============================
 # Etapa 2: Runtime com JDK 21 slim
 # =============================
-FROM openjdk:21-jdk-slim
+#FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
@@ -28,6 +29,7 @@ EXPOSE 27100
 
 # Ativa o profile QA do Spring
 ENV SPRING_PROFILES_ACTIVE=qa
+ENV JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Djavax.net.debug=ssl"
 
 # Comando para iniciar a aplicação
 ENTRYPOINT ["java","-jar","app.jar"]
