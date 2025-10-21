@@ -21,7 +21,7 @@ public class RegistroParadasController {
         this.objectMapper = objectMapper;
     }
 
-    @GetMapping("selecionar")
+    @GetMapping("/selecionar")
     public List<RegistroParadaResponseDTO> selecionar(){
         return service.selecionar();
     }

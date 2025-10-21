@@ -69,7 +69,7 @@ public class RegistroParadasService {
         return objectMapper.convertValue(regitro, RegistroParadaResponseDTO.class);
     }
 
-    public RegistroParadaResponseDTO updatePartially(Integer id, RegistroParadaRequestDTO dto) {
+    public RegistroParadaResponseDTO updatePartially(String id, RegistroParadaRequestDTO dto) {
         RegistroParadas registroExistente = buscarRegistroPorId(id);
 
         System.out.println(registroExistente.getDescricao());

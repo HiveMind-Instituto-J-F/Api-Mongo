@@ -1,14 +1,14 @@
 package com.apimongo.dto;
 
 public class RegistroParadaRequestDTO {
-    private String id_maquina;
-    private String id_usuario;
+    private Integer id_maquina;
+    private Integer id_usuario;
     private String date;
     private String descricao;
 
     public RegistroParadaRequestDTO(
-            String id_maquina,
-            String id_usuario,
+            Integer id_maquina,
+            Integer id_usuario,
             String date,
             String descricao) {
 
@@ -20,19 +20,19 @@ public class RegistroParadaRequestDTO {
 
     public RegistroParadaRequestDTO(){}
 
-    public String getId_maquina() {
+    public Integer getId_maquina() {
         return id_maquina;
     }
 
-    public void setId_maquina(String id_maquina) {
+    public void setId_maquina(Integer id_maquina) {
         this.id_maquina = id_maquina;
     }
 
-    public String getId_usuario() {
+    public Integer getId_usuario() {
         return id_usuario;
     }
 
-    public void setId_usuario(String id_usuario) {
+    public void setId_usuario(Integer id_usuario) {
         this.id_usuario = id_usuario;
     }
 
