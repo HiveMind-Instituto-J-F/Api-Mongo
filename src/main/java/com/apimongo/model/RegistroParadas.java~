@@ -1,43 +1,52 @@
-package com.apimongo.dto;
+package com.apimongo.model;
 
-public class RegistroParadaResponseDTO {
+import lombok.Builder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Builder
+@Document(collection = "registro_paradas")
+public class RegistroParadas {
+    @Id
     private String id;
     private Integer id_maquina;
     private Integer id_usuario;
     private String date;
     private String descricao;
 
-    public RegistroParadaResponseDTO(
-            Integer id_maquina,
-            Integer id_usuario,
+    public RegistroParadas(
+            String id,
+            String id_maquina,
+            String id_usuario,
             String date,
             String descricao) {
 
+        this.id = id;
         this.id_maquina = id_maquina;
         this.id_usuario = id_usuario;
         this.date = date;
         this.descricao = descricao;
     }
 
-    public RegistroParadaResponseDTO(){}
+    public RegistroParadas(){}
 
     public String getId() {
         return id;
     }
 
-    public Integer getId_maquina() {
+    public String getId_maquina() {
         return id_maquina;
     }
 
-    public void setId_maquina(Integer id_maquina) {
+    public void setId_maquina(String id_maquina) {
         this.id_maquina = id_maquina;
     }
 
-    public Integer getId_usuario() {
+    public String getId_usuario() {
         return id_usuario;
     }
 
-    public void setId_usuario(Integer id_usuario) {
+    public void setId_usuario(String id_usuario) {
         this.id_usuario = id_usuario;
     }
 
