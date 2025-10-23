@@ -11,11 +11,17 @@ public class Converter {
     public RegistroParadas paraRegistroParadas(RegistroParadaRequestDTO dto){
         return RegistroParadas.builder()
                 .id_maquina(dto.getId_maquina())
+<<<<<<< HEAD
                 .nomeMaquina(dto.getNomeMaquina())
                 .id_usuario(dto.getId_usuario())
                 .setor(dto.getSetor())
                 .descricao(dto.getDescricao())
                 .date(dto.getDate())
+=======
+                .id_usuario(dto.getId_usuario())
+                .date(dto.getDate())
+                .descricao(dto.getDescricao())
+>>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
                 .build();
     }
 

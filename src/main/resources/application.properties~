@@ -1,0 +1,7 @@
+spring.application.name=ApiMongo
+spring.data.mongodb.uri=${MONGODB_URI}
+spring.data.mongodb.database=hivemind;
+spring.data.mongodb.auto-index-creation=true
+
+server.address=0.0.0.0
+server.port=27100

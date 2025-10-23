@@ -16,15 +16,10 @@ public class RegistroParadas {
     private String descricao;
     private String date;
 
-    public RegistroParadas(
-            String id,
-            Integer id_maquina,
-            String nomeMaquina,
-            Integer id_usuario,
-            String setor,
-            String descricao,
-            String date) {
+    public RegistroParadas() {
+    }
 
+    public RegistroParadas(String id, Integer id_maquina, String nomeMaquina, Integer id_usuario, String setor, String descricao, String date) {
         this.id = id;
         this.id_maquina = id_maquina;
         this.nomeMaquina = nomeMaquina;
@@ -34,10 +29,12 @@ public class RegistroParadas {
         this.date = date;
     }
 
-    public RegistroParadas(){}
-
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Integer getId_maquina() {
@@ -48,6 +45,14 @@ public class RegistroParadas {
         this.id_maquina = id_maquina;
     }
 
+    public String getNomeMaquina() {
+        return nomeMaquina;
+    }
+
+    public void setNomeMaquina(String nomeMaquina) {
+        this.nomeMaquina = nomeMaquina;
+    }
+
     public Integer getId_usuario() {
         return id_usuario;
     }
@@ -56,20 +61,12 @@ public class RegistroParadas {
         this.id_usuario = id_usuario;
     }
 
-    public String getNomeMaquina(){ return nomeMaquina;}
-
-    public void setNomeMaquina(String nomeMaquina){ this.nomeMaquina = nomeMaquina; }
-
-    public String getSetor(){ return setor;}
-
-    public void setSetor(String setor){this.setor = setor;}
-
-    public String getDate() {
-        return date;
+    public String getSetor() {
+        return setor;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setSetor(String setor) {
+        this.setor = setor;
     }
 
     public String getDescricao() {
@@ -78,5 +75,13 @@ public class RegistroParadas {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

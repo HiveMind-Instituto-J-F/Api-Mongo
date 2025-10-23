@@ -1,14 +1,16 @@
 package com.apimongo.dto;
 
-public class RegistroParadaRequestDTO {
+public class RegistroParadaResponseDTO {
+    private String id;
     private Integer id_maquina;
+<<<<<<< HEAD
     private String nomeMaquina;
     private Integer id_usuario;
     private String setor;
     private String descricao;
     private String date;
 
-    public RegistroParadaRequestDTO(
+    public RegistroParadaResponseDTO(
             Integer id_maquina,
             String nomeMaquina,
             Integer id_usuario,
@@ -22,9 +24,29 @@ public class RegistroParadaRequestDTO {
         this.setor = setor;
         this.descricao = descricao;
         this.date = date;
+=======
+    private Integer id_usuario;
+    private String date;
+    private String descricao;
+
+    public RegistroParadaResponseDTO(
+            Integer id_maquina,
+            Integer id_usuario,
+            String date,
+            String descricao) {
+
+        this.id_maquina = id_maquina;
+        this.id_usuario = id_usuario;
+        this.date = date;
+        this.descricao = descricao;
+>>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
     }
 
-    public RegistroParadaRequestDTO(){}
+    public RegistroParadaResponseDTO(){}
+
+    public String getId() {
+        return id;
+    }
 
     public Integer getId_maquina() {
         return id_maquina;
@@ -42,6 +64,7 @@ public class RegistroParadaRequestDTO {
         this.id_usuario = id_usuario;
     }
 
+<<<<<<< HEAD
     public String getNomeMaquina(){ return nomeMaquina;}
 
     public void setNomeMaquina(String nomeMaquina){ this.nomeMaquina = nomeMaquina; }
@@ -50,6 +73,8 @@ public class RegistroParadaRequestDTO {
 
     public void setSetor(String setor){this.setor = setor;}
 
+=======
+>>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
     public String getDate() {
         return date;
     }
