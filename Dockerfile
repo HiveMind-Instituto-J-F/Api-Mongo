@@ -1,15 +1,9 @@
+
 # =============================
 # Etapa 1: Build com Maven + JDK 21
 # =============================
 FROM maven:3.9.4-eclipse-temurin-21 AS builder
 
-<<<<<<< HEAD
-=======
-# Instala JDK
-RUN apt-get update
-RUN apt-get install openjdk-21-jdk -y
-
->>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
 # Diretório de trabalho
 WORKDIR /app
 
@@ -39,8 +33,4 @@ ENV SPRING_PROFILES_ACTIVE=qa
 ENV JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Djavax.net.debug=ssl"
 
 # Comando para iniciar a aplicação
-<<<<<<< HEAD
 ENTRYPOINT ["java","-jar","app.jar"]
-=======
-ENTRYPOINT ["java","-jar","app.jar"]
->>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
