@@ -1,0 +1,6 @@
+PATCH http://localhost:8080/api-mongo/atualizarParcialmente/68e6709787bb133eeae1f1b0
+Content-Type: application/json
+
+{
+  "descricao": "Mais uma parada de troca de rolamento"
+}
