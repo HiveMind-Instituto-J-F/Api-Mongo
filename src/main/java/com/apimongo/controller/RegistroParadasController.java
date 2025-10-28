@@ -47,7 +47,7 @@ public class RegistroParadasController {
     @PatchMapping("/atualizarParcialmente/{id}")
     public String updatePartially (@PathVariable Integer id, @RequestBody RegistroParadaRequestDTO dto) {
         System.out.println("Id: " + id);
-        System.out.println("Descricao: " + dto.getDescricao());
+        System.out.println("Descricao: " + dto.getDes_parada());
         RegistroParadaResponseDTO responseDTO = service.updatePartially(id, dto);
         return "O registro, com ID: " + responseDTO.getId() + ", foi atualizado com sucesso!";
     }

@@ -28,7 +28,7 @@ public class RegistroParadasController {
 
 
     @GetMapping("/buscar/{id}")
-    public RegistroParadas buscarId(@PathVariable String id){
+    public RegistroParadas buscarId(@PathVariable Integer id){
         return service.buscarRegistroPorId(id);
     }
 
@@ -39,13 +39,13 @@ public class RegistroParadasController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public String update(@PathVariable String id, @RequestBody RegistroParadaRequestDTO dto){
+    public String update(@PathVariable Integer id, @RequestBody RegistroParadaRequestDTO dto){
         RegistroParadaResponseDTO resposta = service.update(id, dto);
         return "O registro com ID: " + resposta.getId() + ", foi atualizado com sucesso!";
     }
 
     @PatchMapping("/atualizarParcialmente/{id}")
-    public String updatePartially (@PathVariable String id, @RequestBody RegistroParadaRequestDTO dto) {
+    public String updatePartially (@PathVariable Integer id, @RequestBody RegistroParadaRequestDTO dto) {
         System.out.println("Id: " + id);
         System.out.println("Descricao: " + dto.getDescricao());
         RegistroParadaResponseDTO responseDTO = service.updatePartially(id, dto);

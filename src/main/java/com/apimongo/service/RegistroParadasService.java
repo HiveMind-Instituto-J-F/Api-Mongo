@@ -62,8 +62,11 @@ public class RegistroParadasService {
 
         registroExistente.setId_maquina(dtoRequest.getId_maquina());
         registroExistente.setId_usuario(dtoRequest.getId_usuario());
-        registroExistente.setDate(dtoRequest.getDate());
-        registroExistente.setDescricao(dtoRequest.getDescricao());
+        registroExistente.setDes_parada(dtoRequest.getDes_parada());
+        registroExistente.setDes_setor(dtoRequest.getDes_setor());
+        registroExistente.setDt_parada(dtoRequest.getDt_parada());
+        registroExistente.setHora_Fim(dtoRequest.getHora_Fim());
+        registroExistente.setHora_Inicio(dtoRequest.getHora_Inicio());
 
         RegistroParadas regitro = registroParadasRepository.save(registroExistente);
         return objectMapper.convertValue(regitro, RegistroParadaResponseDTO.class);
@@ -72,7 +75,7 @@ public class RegistroParadasService {
     public RegistroParadaResponseDTO updatePartially(Integer id, RegistroParadaRequestDTO dto) {
         RegistroParadas registroExistente = buscarRegistroPorId(id);
 
-        System.out.println(registroExistente.getDescricao());
+        System.out.println("Descricao: " + dto.getDes_parada());
 
         if (dto.getId_maquina() != null){
             registroExistente.setId_maquina(dto.getId_maquina());
@@ -81,17 +84,26 @@ public class RegistroParadasService {
 
         if (dto.getId_usuario() != null){
             registroExistente.setId_usuario(dto.getId_usuario());
-            System.out.println(registroExistente.getId_usuario());
         }
 
-        if (dto.getDate() != null){
-            registroExistente.setDate(dto.getDate());
-            System.out.println(registroExistente.getDate());
+        if (dto.getDes_parada() != null){
+            registroExistente.setDes_parada(dto.getDes_parada());
         }
 
-        if (dto.getDescricao() != null){
-            registroExistente.setDescricao(dto.getDescricao());
-            System.out.println(registroExistente.getDescricao());
+        if (dto.getDes_setor() != null){
+            registroExistente.setDes_setor(dto.getDes_setor());
+        }
+
+        if (dto.getDt_parada() != null){
+            registroExistente.setDt_parada(dto.getDt_parada());
+        }
+
+        if (dto.getHora_Fim() != null){
+            registroExistente.setHora_Fim(dto.getHora_Fim());
+        }
+
+        if (dto.getHora_Inicio() != null){
+            registroExistente.setHora_Inicio(dto.getHora_Inicio());
         }
 
         RegistroParadas registro = registroParadasRepository.save(registroExistente);
