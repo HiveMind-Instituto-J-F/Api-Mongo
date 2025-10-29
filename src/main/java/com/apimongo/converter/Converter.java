@@ -19,6 +19,4 @@ public class Converter {
                 .hora_Inicio(dto.getHora_Inicio())
                 .build();
     }
-
-
 }

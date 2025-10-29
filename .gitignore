@@ -12,6 +12,10 @@ target/
 .settings
 .springBeans
 .sts4-cache
+<<<<<<< HEAD
+.env
+=======
+>>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
 
 ### IntelliJ IDEA ###
 .idea

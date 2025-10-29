@@ -1,0 +1,2 @@
+package com.apimongo.security;public class CustomAcessDeniedHandler {
+}

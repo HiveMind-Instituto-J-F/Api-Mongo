@@ -4,6 +4,7 @@ import com.apimongo.dto.RegistroParadaRequestDTO;
 import com.apimongo.dto.RegistroParadaResponseDTO;
 import com.apimongo.model.RegistroParadas;
 import com.apimongo.service.RegistroParadasService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bson.types.ObjectId;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,7 @@ public class RegistroParadasController {
     }
 
     @PostMapping("/inserir")
-    public String save (@RequestBody RegistroParadaRequestDTO dto){
+    public String save (@RequestBody RegistroParadaRequestDTO dto) throws JsonProcessingException {
         RegistroParadaResponseDTO resposta = service.save(dto);
         return "O registro foi inserido, com ID: " + resposta.getId() + ", com sucesso!";
     }

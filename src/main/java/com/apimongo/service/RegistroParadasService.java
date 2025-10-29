@@ -1,3 +1,4 @@
+
 package com.apimongo.service;
 
 import com.apimongo.converter.RegistroParadaMapper;
@@ -5,6 +6,7 @@ import com.apimongo.dto.RegistroParadaRequestDTO;
 import com.apimongo.dto.RegistroParadaResponseDTO;
 import com.apimongo.model.RegistroParadas;
 import com.apimongo.repository.RegistroParadasRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -51,8 +53,9 @@ public class RegistroParadasService {
         return mongoTemplate.findOne(query, RegistroParadas.class);
     }
 
-    public RegistroParadaResponseDTO save(RegistroParadaRequestDTO dtoRequest){
+    public RegistroParadaResponseDTO save(RegistroParadaRequestDTO dtoRequest) throws JsonProcessingException {
         RegistroParadas rp = objectMapper.convertValue(dtoRequest, RegistroParadas.class);
+        System.out.println("DTO recebido: " + objectMapper.writeValueAsString(dtoRequest));
         rp = registroParadasRepository.save(rp);
         return objectMapper.convertValue(rp, RegistroParadaResponseDTO.class);
     }
@@ -79,7 +82,6 @@ public class RegistroParadasService {
 
         if (dto.getId_maquina() != null){
             registroExistente.setId_maquina(dto.getId_maquina());
-            System.out.println(registroExistente.getId_maquina());
         }
 
         if (dto.getId_usuario() != null){

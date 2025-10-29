@@ -12,6 +12,7 @@ public class RegistroParadas {
     @Id
     private String id;
     private Integer id_maquina;
+    private String nomeMaquina;
     private Integer id_usuario;
     private String des_parada;
     private String des_setor;
@@ -38,8 +39,6 @@ public class RegistroParadas {
         this.hora_Fim = hora_Fim;
         this.hora_Inicio = hora_Inicio;
     }
-
-    public RegistroParadas(){}
 
     public String getId() {
         return id;
@@ -69,7 +68,7 @@ public class RegistroParadas {
         return des_parada;
     }
 
-    public void setDes_parada(String des_parada) {
+    public void setDes_parada(String des_parada){
         this.des_parada = des_parada;
     }
 
