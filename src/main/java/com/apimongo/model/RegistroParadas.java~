@@ -38,23 +38,6 @@ public class RegistroParadas {
         this.dt_parada = dt_parada;
         this.hora_Fim = hora_Fim;
         this.hora_Inicio = hora_Inicio;
-=======
-    private String setor;
-    private String descricao;
-    private String date;
-
-    public RegistroParadas() {
->>>>>>> b0048bbe199774d96905b3f7bca6847edced1969
-    }
-
-    public RegistroParadas(String id, Integer id_maquina, String nomeMaquina, Integer id_usuario, String setor, String descricao, String date) {
-        this.id = id;
-        this.id_maquina = id_maquina;
-        this.nomeMaquina = nomeMaquina;
-        this.id_usuario = id_usuario;
-        this.setor = setor;
-        this.descricao = descricao;
-        this.date = date;
     }
 
     public String getId() {
@@ -73,14 +56,6 @@ public class RegistroParadas {
         this.id_maquina = id_maquina;
     }
 
-    public String getNomeMaquina() {
-        return nomeMaquina;
-    }
-
-    public void setNomeMaquina(String nomeMaquina) {
-        this.nomeMaquina = nomeMaquina;
-    }
-
     public Integer getId_usuario() {
         return id_usuario;
     }
@@ -89,21 +64,12 @@ public class RegistroParadas {
         this.id_usuario = id_usuario;
     }
 
-<<<<<<< HEAD
     public String getDes_parada() {
         return des_parada;
     }
 
-    public void setDes_parada(String des_parada) {
+    public void setDes_parada(String des_parada){
         this.des_parada = des_parada;
-=======
-    public String getSetor() {
-        return setor;
-    }
-
-    public void setSetor(String setor) {
-        this.setor = setor;
->>>>>>> b0048bbe199774d96905b3f7bca6847edced1969
     }
 
     public String getDes_setor() {
@@ -136,13 +102,5 @@ public class RegistroParadas {
 
     public void setHora_Inicio(Date hora_Inicio) {
         this.hora_Inicio = hora_Inicio;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 }

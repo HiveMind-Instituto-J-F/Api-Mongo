@@ -12,7 +12,6 @@ public class RegistroParadas {
     @Id
     private String id;
     private Integer id_maquina;
-    private String nomeMaquina;
     private Integer id_usuario;
     private String des_parada;
     private String des_setor;
