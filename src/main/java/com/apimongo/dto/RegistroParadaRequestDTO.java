@@ -1,27 +1,32 @@
 package com.apimongo.dto;
 
+import java.util.Date;
+
 public class RegistroParadaRequestDTO {
     private Integer id_maquina;
-    private String nomeMaquina;
     private Integer id_usuario;
-    private String setor;
-    private String descricao;
-    private String date;
+    private String des_parada;
+    private String des_setor;
+    private Date dt_parada;
+    private Date hora_Fim;
+    private Date hora_Inicio;
 
     public RegistroParadaRequestDTO(
             Integer id_maquina,
-            String nomeMaquina,
             Integer id_usuario,
-            String setor,
-            String descricao,
-            String date) {
-
+            String des_parada,
+            String des_setor,
+            Date dt_parada,
+            Date hora_Fim,
+            Date hora_Inicio)
+    {
         this.id_maquina = id_maquina;
-        this.nomeMaquina = nomeMaquina;
         this.id_usuario = id_usuario;
-        this.setor = setor;
-        this.descricao = descricao;
-        this.date = date;
+        this.des_parada = des_parada;
+        this.des_setor = des_setor;
+        this.dt_parada = dt_parada;
+        this.hora_Fim = hora_Fim;
+        this.hora_Inicio = hora_Inicio;
     }
 
     public RegistroParadaRequestDTO(){}
@@ -42,27 +47,43 @@ public class RegistroParadaRequestDTO {
         this.id_usuario = id_usuario;
     }
 
-    public String getNomeMaquina(){ return nomeMaquina;}
-
-    public void setNomeMaquina(String nomeMaquina){ this.nomeMaquina = nomeMaquina; }
-
-    public String getSetor(){ return setor;}
-
-    public void setSetor(String setor){this.setor = setor;}
-
-    public String getDate() {
-        return date;
+    public String getDes_parada() {
+        return des_parada;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDes_parada(String des_parada) {
+        this.des_parada = des_parada;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDes_setor() {
+        return des_setor;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDes_setor(String des_setor) {
+        this.des_setor = des_setor;
+    }
+
+    public Date getDt_parada() {
+        return dt_parada;
+    }
+
+    public void setDt_parada(Date dt_parada) {
+        this.dt_parada = dt_parada;
+    }
+
+    public Date getHora_Fim() {
+        return hora_Fim;
+    }
+
+    public void setHora_Fim(Date hora_Fim) {
+        this.hora_Fim = hora_Fim;
+    }
+
+    public Date getHora_Inicio() {
+        return hora_Inicio;
+    }
+
+    public void setHora_Inicio(Date hora_Inicio) {
+        this.hora_Inicio = hora_Inicio;
     }
 }

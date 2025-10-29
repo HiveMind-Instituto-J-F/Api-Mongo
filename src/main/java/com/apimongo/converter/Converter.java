@@ -11,13 +11,12 @@ public class Converter {
     public RegistroParadas paraRegistroParadas(RegistroParadaRequestDTO dto){
         return RegistroParadas.builder()
                 .id_maquina(dto.getId_maquina())
-                .nomeMaquina(dto.getNomeMaquina())
                 .id_usuario(dto.getId_usuario())
-                .setor(dto.getSetor())
-                .descricao(dto.getDescricao())
-                .date(dto.getDate())
+                .des_parada(dto.getDes_parada())
+                .des_setor(dto.getDes_setor())
+                .dt_parada(dto.getDt_parada())
+                .hora_Fim(dto.getHora_Fim())
+                .hora_Inicio(dto.getHora_Inicio())
                 .build();
     }
-
-
 }

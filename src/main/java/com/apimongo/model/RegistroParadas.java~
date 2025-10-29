@@ -4,34 +4,50 @@ import lombok.Builder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Builder
 @Document(collection = "registro_paradas")
 public class RegistroParadas {
     @Id
     private String id;
     private Integer id_maquina;
-<<<<<<< HEAD
     private String nomeMaquina;
     private Integer id_usuario;
-    private String setor;
-    private String descricao;
-    private String date;
-=======
-    private Integer id_usuario;
-    private String date;
-    private String descricao;
->>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
+    private String des_parada;
+    private String des_setor;
+    private Date dt_parada;
+    private Date hora_Fim;
+    private Date hora_Inicio;
 
     public RegistroParadas(
             String id,
             Integer id_maquina,
-<<<<<<< HEAD
-            String nomeMaquina,
             Integer id_usuario,
-            String setor,
-            String descricao,
-            String date) {
+            String des_parada,
+            String des_setor,
+            Date dt_parada,
+            Date hora_Fim,
+            Date hora_Inicio)
+    {
+        this.id = id;
+        this.id_maquina = id_maquina;
+        this.id_usuario = id_usuario;
+        this.des_parada = des_parada;
+        this.des_setor = des_setor;
+        this.dt_parada = dt_parada;
+        this.hora_Fim = hora_Fim;
+        this.hora_Inicio = hora_Inicio;
+=======
+    private String setor;
+    private String descricao;
+    private String date;
 
+    public RegistroParadas() {
+>>>>>>> b0048bbe199774d96905b3f7bca6847edced1969
+    }
+
+    public RegistroParadas(String id, Integer id_maquina, String nomeMaquina, Integer id_usuario, String setor, String descricao, String date) {
         this.id = id;
         this.id_maquina = id_maquina;
         this.nomeMaquina = nomeMaquina;
@@ -39,23 +55,14 @@ public class RegistroParadas {
         this.setor = setor;
         this.descricao = descricao;
         this.date = date;
-=======
-            Integer id_usuario,
-            String date,
-            String descricao) {
-
-        this.id = id;
-        this.id_maquina = id_maquina;
-        this.id_usuario = id_usuario;
-        this.date = date;
-        this.descricao = descricao;
->>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
     }
-
-    public RegistroParadas(){}
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Integer getId_maquina() {
@@ -64,6 +71,14 @@ public class RegistroParadas {
 
     public void setId_maquina(Integer id_maquina) {
         this.id_maquina = id_maquina;
+    }
+
+    public String getNomeMaquina() {
+        return nomeMaquina;
+    }
+
+    public void setNomeMaquina(String nomeMaquina) {
+        this.nomeMaquina = nomeMaquina;
     }
 
     public Integer getId_usuario() {
@@ -75,29 +90,59 @@ public class RegistroParadas {
     }
 
 <<<<<<< HEAD
-    public String getNomeMaquina(){ return nomeMaquina;}
+    public String getDes_parada() {
+        return des_parada;
+    }
 
-    public void setNomeMaquina(String nomeMaquina){ this.nomeMaquina = nomeMaquina; }
-
-    public String getSetor(){ return setor;}
-
-    public void setSetor(String setor){this.setor = setor;}
-
+    public void setDes_parada(String des_parada) {
+        this.des_parada = des_parada;
 =======
->>>>>>> 9488799e0836f4386e77a4fcc16f1cf1d1bb6713
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
+>>>>>>> b0048bbe199774d96905b3f7bca6847edced1969
+    }
+
+    public String getDes_setor() {
+        return des_setor;
+    }
+
+    public void setDes_setor(String des_setor) {
+        this.des_setor = des_setor;
+    }
+
+    public Date getDt_parada() {
+        return dt_parada;
+    }
+
+    public void setDt_parada(Date dt_parada) {
+        this.dt_parada = dt_parada;
+    }
+
+    public Date getHora_Fim() {
+        return hora_Fim;
+    }
+
+    public void setHora_Fim(Date hora_Fim) {
+        this.hora_Fim = hora_Fim;
+    }
+
+    public Date getHora_Inicio() {
+        return hora_Inicio;
+    }
+
+    public void setHora_Inicio(Date hora_Inicio) {
+        this.hora_Inicio = hora_Inicio;
+    }
+
     public String getDate() {
         return date;
     }
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 }
