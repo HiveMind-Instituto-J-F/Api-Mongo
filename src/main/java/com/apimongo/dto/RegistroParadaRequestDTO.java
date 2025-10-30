@@ -1,14 +1,32 @@
 package com.apimongo.dto;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import java.util.Date;
 
 public class RegistroParadaRequestDTO {
+    @NotNull(message = "O campo id_maquina está vazio. Preenche-o")
     private Integer id_maquina;
+
+    @NotNull(message = "O campo id_usuario está vazio. Preenche-o")
     private Integer id_usuario;
+
+    @NotBlank(message = "O campo des_parada está vazio. Preenche-o")
     private String des_parada;
+
+    @NotBlank(message = "O campo des_setor está vazio. Preenche-o")
+    @Size(max = 50, message = "A descrição deve conter no máximo 50 caracteres")
     private String des_setor;
+
+    @NotNull(message = "O campo dt_parada está vazio. Preenche-o")
     private Date dt_parada;
+
+    @NotNull(message = "O campo hora_Fim está vazio. Preenche-o")
     private Date hora_Fim;
+
+    @NotNull(message = "O campo hora_Inicio está vazio. Preenche-o")
     private Date hora_Inicio;
 
     public RegistroParadaRequestDTO(
