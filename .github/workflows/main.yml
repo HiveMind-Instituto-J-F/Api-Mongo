@@ -2,9 +2,11 @@ name: Spring Boot CI
 
 on:
   push:
-    branches: - '**'
+    branches:
+      - '**'
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
 
 jobs:
   build:
@@ -20,12 +22,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Set environment variables
+    - name: Set environment variables (MongoDB)
       run: |
         echo "APPLICATION_NAME=${{ secrets.APPLICATION_NAME }}" >> $GITHUB_ENV
-        echo "DB_URL=${{ secrets.DB_URL }}" >> $GITHUB_ENV
-        echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> $GITHUB_ENV
-        echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
+        echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> $GITHUB_ENV
 
     - name: Build and Package with Maven (skip tests)
       run: cd API_Rest && mvn -B clean package -DskipTests --file pom.xml
