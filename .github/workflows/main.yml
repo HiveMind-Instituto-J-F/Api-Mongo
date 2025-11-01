@@ -13,12 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Set up JDK 17
+    - name: Set up JDK 21 (Temurin)
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         cache: maven
 
@@ -27,11 +28,11 @@ jobs:
         echo "APPLICATION_NAME=${{ secrets.APPLICATION_NAME }}" >> $GITHUB_ENV
         echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> $GITHUB_ENV
 
-    - name: Build and Package with Maven (skip tests)
-      run: cd API_Rest && mvn -B clean package -DskipTests --file pom.xml
+    - name: Build & Package with Maven (skip tests)
+      run: mvn -B clean package -DskipTests --file pom.xml
 
     - name: Upload JAR Artifact
       uses: actions/upload-artifact@v4
       with:
         name: springboot-app
-        path: API_Rest/target/*.jar
+        path: target/*.jar
